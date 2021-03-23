@@ -1,0 +1,75 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.main-container {
+	min-height: calc(100vh - 136px);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: "image-box"
+						"text-box";
+	row-gap: 50px;
+	column-gap: 50px;
+}
+
+@media screen and (min-width:850px) {
+	.main-container {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: "image-box text-box";
+	}
+}
+
+.image-box {
+	grid-area: image-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.image-box img {
+	width: 100%;
+	max-width: 450px;
+}
+
+.text-box {
+	grid-area: text-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	width: 100%;
+}
+
+.card p {
+	color: #fff;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.card input {
+	margin-bottom: 40px;
+	height: 35px;
+}
+
+.warning {
+	position: relative;
+	margin-top: -37px;
+}
+
+footer {
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+}

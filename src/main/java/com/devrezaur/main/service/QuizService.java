@@ -1,5 +1,7 @@
 package com.devrezaur.main.service;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.devrezaur.main.model.Question;
@@ -20,7 +22,17 @@ public class QuizService {
 	Result result;
 	
 	public QuestionForm getQuestions() {
-		List<Question> qList = qRepo.findAll();
+		List<Question> allQues = qRepo.findAll();
+		List<Question> qList = new ArrayList<Question>();
+		
+		Random random = new Random();
+		
+		for(int i=0; i<4; i++) {
+			int rand = random.nextInt(allQues.size());
+			qList.add(allQues.get(rand));
+			allQues.remove(rand);
+		}
+
 		qForm.setQuestions(qList);
 		
 		return qForm;

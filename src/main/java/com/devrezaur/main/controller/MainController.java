@@ -13,22 +13,30 @@ import com.devrezaur.main.model.Question;
 import com.devrezaur.main.model.QuestionForm;
 import com.devrezaur.main.model.Result;
 import com.devrezaur.main.repository.QuestionRepo;
-import com.devrezaur.main.service.ResultService;
+import com.devrezaur.main.service.QuizService;
 
 @Controller
 public class MainController {
 	
 	@Autowired
-	QuestionRepo qRepo;
+	Result result;
 	@Autowired
-	ResultService rs;
+	QuizService qService;
+	
+	String username = null;
+	Boolean submitted = false;
 	
 	@ModelAttribute("username")
-	public String setUsername(String username) {
+	public String getUsername() {
 		return username;
 	}
 	
-	@GetMapping({"/", "/quiz"})
+	@ModelAttribute("result")
+	public Result getResult() {
+		return result;
+	}
+	
+	@GetMapping("/")
 	public String home() {
 		return "index.html";
 	}
@@ -40,24 +48,22 @@ public class MainController {
 			return "redirect:/";
 		}
 		
-		QuestionForm qForm = new QuestionForm();
-		List<Question> qList = qRepo.findAll();
-		qForm.setQuestions(qList);
+		this.username = username;
+		submitted = false;
 		
+		QuestionForm qForm = qService.getQuestions();
 		m.addAttribute("qForm", qForm);
+		
 		return "quiz.html";
 	}
 	
 	@PostMapping("/submit")
-	public String submit(@ModelAttribute QuestionForm qForm, Model m, RedirectAttributes ra) {
-		Result result = rs.getResult(qForm);
-		//m.addAttribute("result", result);
-		ra.addFlashAttribute("result", result);
-		return "redirect:/result";
-	}
-	
-	@GetMapping("/result")
-	public String submit_() {	
+	public String submit(@ModelAttribute QuestionForm qForm, Model m) {
+		if(!submitted) {
+			result = qService.getResult(qForm);
+			submitted = true;
+		}
 		return "result.html";
 	}
+
 }

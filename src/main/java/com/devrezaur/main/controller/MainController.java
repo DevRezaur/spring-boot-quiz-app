@@ -1,5 +1,6 @@
 package com.devrezaur.main.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,13 +21,7 @@ public class MainController {
 	@Autowired
 	QuizService qService;
 	
-	String username = null;
 	Boolean submitted = false;
-	
-	@ModelAttribute("username")
-	public String getUsername() {
-		return username;
-	}
 	
 	@ModelAttribute("result")
 	public Result getResult() {
@@ -45,9 +40,8 @@ public class MainController {
 			return "redirect:/";
 		}
 		
-		this.username = username;
 		submitted = false;
-		result = null;
+		result.setUsername(username);
 		
 		QuestionForm qForm = qService.getQuestions();
 		m.addAttribute("qForm", qForm);
@@ -58,10 +52,20 @@ public class MainController {
 	@PostMapping("/submit")
 	public String submit(@ModelAttribute QuestionForm qForm, Model m) {
 		if(!submitted) {
-			result = qService.getResult(qForm);
+			result.setTotalCorrect(qService.getResult(qForm));
+			qService.saveScore(result);
 			submitted = true;
 		}
+		
 		return "result.html";
+	}
+	
+	@GetMapping("/score")
+	public String score(Model m) {
+		List<Result> sList = qService.getTopScore();
+		m.addAttribute("sList", sList);
+		
+		return "scoreboard.html";
 	}
 
 }

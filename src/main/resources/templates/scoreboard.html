@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/score.css}">
+	<title>Score Board</title>
+</head>
+<body>
+
+	<!-- Importing NavBar -->
+	<div th:insert="navbar.html :: navbar"></div>
+	
+	<!-- Main Container Start -->
+	<div class="main-container container py-5 px-4">
+		<h3 class="bg-danger text-center mb-5 p-2">Top 10 Scores Of All Time</h3>
+		
+		<div class="score-box">
+			<div class="score bg-dark text-light" th:each="score : ${sList}">
+				<div class="d-flex justify-content-center">
+					<p>Username:&nbsp;&nbsp;</p>
+					<p th:text="${score.username}"></p>
+			
+					<p>Total correct answer:&nbsp;&nbsp;</p>
+					<p th:text="${score.totalCorrect}"></p>
+
+					<p>Total False answer:&nbsp;&nbsp;</p>
+					<p th:text="4 - ${score.totalCorrect}"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Importing Footer -->
+	<div th:insert="footer.html :: footer"></div>
+	
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

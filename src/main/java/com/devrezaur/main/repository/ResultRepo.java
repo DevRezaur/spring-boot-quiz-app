@@ -6,5 +6,5 @@ import com.devrezaur.main.model.Result;
 
 @Repository
 public interface ResultRepo extends JpaRepository<Result, Integer> {
-
+	
 }

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.devrezaur.main.model.Question;
 import com.devrezaur.main.model.QuestionForm;
@@ -59,7 +60,7 @@ public class QuizService {
 	}
 	
 	public List<Result> getTopScore() {
-		List<Result> sList = rRepo.findAll();
+		List<Result> sList = rRepo.findAll(Sort.by(Sort.Direction.DESC, "totalCorrect"));
 		
 		return sList;
 	}

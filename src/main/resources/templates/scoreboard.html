@@ -17,22 +17,18 @@
 	
 	<!-- Main Container Start -->
 	<div class="main-container container py-5 px-4">
-		<h3 class="bg-danger text-center mb-5 p-2">Top 10 Scores Of All Time</h3>
+		<h3 class="bg-danger text-center mb-5 p-2">Top Scores Of All Time</h3>
 		
-		<div class="score-box">
-			<div class="score bg-dark text-light" th:each="score : ${sList}">
-				<div class="d-flex justify-content-center">
-					<p>Username:&nbsp;&nbsp;</p>
-					<p th:text="${score.username}"></p>
-			
-					<p>Total correct answer:&nbsp;&nbsp;</p>
-					<p th:text="${score.totalCorrect}"></p>
-
-					<p>Total False answer:&nbsp;&nbsp;</p>
-					<p th:text="4 - ${score.totalCorrect}"></p>
-				</div>
-			</div>
-		</div>
+		<table class="bg-dark text-light">
+			<tr>
+				<th>Name</th>
+				<th>Score</th>
+			</tr>
+			<tr th:each="score : ${sList}">
+				<td th:text="${score.username}"></td>
+				<td th:text="${score.totalCorrect}"></td>
+			</tr>
+		</table>
 	</div>
 	
 	<!-- Importing Footer -->

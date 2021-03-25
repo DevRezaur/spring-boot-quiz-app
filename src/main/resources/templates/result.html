@@ -38,8 +38,10 @@
 			</div>
 			
 			<div class="d-flex justify-content-center mt-4">
-				<button type="button" class="btn btn-outline-warning mx-auto">View Score Board</button>
-				<button type="button" class="btn btn-outline-warning mx-auto">Back to Homepage</button>
+				<button type="button" th:onclick="window.location.href='/score'"
+					class="btn btn-outline-warning mx-auto">View Score Board</button>
+				<button type="button" th:onclick="window.location.href='/'"
+					class="btn btn-outline-warning mx-auto">Back to Homepage</button>
 			</div>
 		</div>
 	</div>

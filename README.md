@@ -19,7 +19,7 @@ This project was made as a part of my channel's Spring Boot Tutorial series in B
 
 ### Result Page
 
-![Result Page](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/main/screenshots/Result%20Page1.PNG)
+![Result Page](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/main/screenshots/Result%20Page.PNG)
 
 ### Score Board
 

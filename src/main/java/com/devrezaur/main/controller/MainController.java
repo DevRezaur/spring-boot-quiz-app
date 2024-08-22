@@ -15,13 +15,12 @@ import com.devrezaur.main.service.QuizService;
 
 @Controller
 public class MainController {
-	
-	@Autowired
-	Result result;
+
 	@Autowired
 	QuizService qService;
-	
-	Boolean submitted = false;
+
+	Result result;
+	Boolean submitted;
 	
 	@ModelAttribute("result")
 	public Result getResult() {
@@ -41,6 +40,7 @@ public class MainController {
 		}
 		
 		submitted = false;
+		result = new Result();
 		result.setUsername(username);
 		
 		QuestionForm qForm = qService.getQuestions();

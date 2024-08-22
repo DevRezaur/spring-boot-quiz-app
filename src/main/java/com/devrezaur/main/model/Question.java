@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class Question {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int quesId;
 	private String title;
 	private String optionA;

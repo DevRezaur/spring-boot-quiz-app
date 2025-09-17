@@ -1,17 +1,17 @@
 package com.devrezaur.main.model;
-import java.util.List;
-import org.springframework.stereotype.Component;
 
-@Component
+import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 public class QuestionForm {
 
-	private List<Question> questions;
-	
-	public List<Question> getQuestions() {
-		return questions;
-	}
-	
-	public void setQuestions(List<Question> questions) {
-		this.questions = questions;
-	}
+  private List<Question> questions;
+
 }

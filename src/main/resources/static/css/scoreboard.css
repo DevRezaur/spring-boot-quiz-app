@@ -1,0 +1,27 @@
+.main-container {
+	min-height: calc(100vh - 100px);
+	padding: 40px 20px;
+}
+
+.title {
+  background-color: #fc5c7d;
+  color: white;
+	font-size: 18px;
+	letter-spacing: 0.5px;
+	text-align: center;
+	padding: 10px 20px;
+	margin-bottom: 30px;
+}
+
+table {
+	width: 100%;
+	text-align: center;
+	background-color: #1f2833;
+  color: white;
+  border-collapse: collapse;
+}
+
+th, td {
+	padding: 10px;
+	border: 1px solid white;
+}

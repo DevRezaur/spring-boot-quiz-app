@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/global.css}">
+  <link rel="stylesheet" th:href="@{/css/navbar.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+  <link rel="stylesheet" th:href="@{/css/scoreboard-page.css}">
+  <title>Scoreboard Page</title>
+</head>
+<body>
+	<!-- NavBar -->
+	<div th:replace="fragments/navbar.html :: navbar"></div>
+
+	<div class="container main-container">
+		<h3>Top Scores Of All Time</h3>
+
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Score</th>
+			</tr>
+			<tr th:each="result : ${results}">
+				<td th:text="${result.username}"></td>
+				<td th:text="${result.totalCorrect}"></td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Footer -->
+	<div th:replace="fragments/footer.html :: footer"></div>
+</body>
+</html>

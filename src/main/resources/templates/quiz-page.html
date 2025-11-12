@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/global.css}">
+  <link rel="stylesheet" th:href="@{/css/navbar.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+  <link rel="stylesheet" th:href="@{/css/quiz-page.css}">
+  <title>Quiz Page</title>
+</head>
+<body>
+	<!-- NavBar -->
+	<div th:replace="fragments/navbar.html :: navbar"></div>
+
+	<div class="container main-container">
+  	<h3>Only Select The Correct Answers</h3>
+
+  	<form th:action="@{submit}" th:object="${questionForm}" method="post">
+    	<div class="question-box" th:each="question, i: *{questions}">
+      	<p class="title" th:text="${question.title}"></p>
+
+      	<div class="option">
+        	<input type="radio" id="optionA" th:field="*{questions[__${i.index}__].chose}" th:value="1"/>
+					<label for="optionA" th:text="${question.optionA}"></label>
+				</div>
+
+				<div class="option">
+					<input type="radio" id="optionB" th:field="*{questions[__${i.index}__].chose}" th:value="2"/>
+					<label for="optionB" th:text="${question.optionB}"></label>
+				</div>
+
+				<div class="option">
+					<input type="radio" id="optionC" th:field="*{questions[__${i.index}__].chose}" th:value="3"/>
+					<label for="optionC" th:text="${question.optionC}"></label>
+				</div>
+
+				<input type="hidden" th:field="*{questions[__${i.index}__].quesId}" th:value="${question.quesId}"/>
+				<input type="hidden" th:field="*{questions[__${i.index}__].title}" th:value="${question.title}"/>
+				<input type="hidden" th:field="*{questions[__${i.index}__].ans}" th:value="${question.ans}"/>
+			</div>
+
+			<input type="hidden" th:name="username" th:value="${username}">
+
+			<button type="submit">Submit Answer</button>
+		</form>
+	</div>
+
+	<!-- Footer -->
+	<div th:replace="fragments/footer.html :: footer"></div>
+</body>
+</html>

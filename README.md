@@ -9,21 +9,21 @@ This project was made as a part of my channel's Spring Boot Tutorial series in B
 
 ### Start Page
 
-![Start Page](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/main/screenshots/Start%20Page.PNG)
+![Start Page](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/refs/heads/main/screenshots/Start%20Page.PNG)
 
 ### Quiz Page
 
-![Quiz Page 1](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/main/screenshots/Quiz%20Page%201.PNG)
+![Quiz Page 1](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/refs/heads/main/screenshots/Quiz%20Page%201.PNG)
 
-![Quiz Page 2](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/main/screenshots/Quiz%20Page%202.PNG)
+![Quiz Page 2](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/refs/heads/main/screenshots/Quiz%20Page%202.PNG)
 
 ### Result Page
 
-![Result Page](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/main/screenshots/Result%20Page.PNG)
+![Result Page](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/refs/heads/main/screenshots/Result%20Page.PNG)
 
 ### Score Board
 
-![Score Board](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/main/screenshots/Score%20Board.PNG)
+![Score Board](https://raw.githubusercontent.com/DevRezaur/spring-boot-quiz-app/refs/heads/main/screenshots/Score%20Board.PNG)
 
 ---
 

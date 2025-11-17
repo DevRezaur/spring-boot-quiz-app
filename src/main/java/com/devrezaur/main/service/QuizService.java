@@ -38,7 +38,7 @@ public class QuizService {
   public Result evaluateAndSaveResult(String username, QuestionForm questionForm) {
     int totalCorrect = 0;
     for (Question question : questionForm.getQuestions()) {
-      if (question.getAns() == question.getChose()) {
+      if (question.getCorrectAns() == question.getSelectedAns()) {
         totalCorrect++;
       }
     }

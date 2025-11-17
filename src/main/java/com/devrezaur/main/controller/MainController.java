@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequiredArgsConstructor
@@ -22,21 +21,16 @@ public class MainController {
 
   @GetMapping("/")
   public String homePage() {
-    return "home-page.html";
+    return "home-page";
   }
 
   @PostMapping("/quiz")
-  public String quizPage(@RequestParam String username, Model model, RedirectAttributes redirectAttributes) {
-    if (username.isEmpty()) {
-      redirectAttributes.addFlashAttribute("warning", "Please enter your name");
-      return "redirect:/";
-    }
-
+  public String quizPage(@RequestParam String username, Model model) {
     QuestionForm questionForm = quizService.getQuestions();
     model.addAttribute("questionForm", questionForm);
     model.addAttribute("username", username);
 
-    return "quiz-page.html";
+    return "quiz-page";
   }
 
   @PostMapping("/submit")
@@ -44,7 +38,7 @@ public class MainController {
     Result result = quizService.evaluateAndSaveResult(username, questionForm);
     model.addAttribute("result", result);
 
-    return "result-page.html";
+    return "result-page";
   }
 
   @GetMapping("/scoreboard")
@@ -52,7 +46,7 @@ public class MainController {
     List<Result> results = quizService.getResults();
     model.addAttribute("results", results);
 
-    return "scoreboard-page.html";
+    return "scoreboard-page";
   }
 
 }

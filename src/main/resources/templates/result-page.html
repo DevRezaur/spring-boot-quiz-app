@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" th:href="@{/css/global.css}">
-  <link rel="stylesheet" th:href="@{/css/navbar.css}">
-  <link rel="stylesheet" th:href="@{/css/footer.css}">
-  <link rel="stylesheet" th:href="@{/css/result-page.css}">
-  <title>Result Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/result-page.css}">
+    <title>Result Page</title>
 </head>
 <body>
-	<!-- NavBar -->
-	<div th:replace="~{fragments/navbar.html :: navbar}"></div>
+<!-- NavBar -->
+<div th:replace="~{fragments/navbar.html :: navbar}"></div>
 
-	<div class="container main-container">
-		<div class="card">
-			<img th:src="@{/images/exam.svg}" alt="image"/>
+<div class="container main-container">
+    <div class="card">
+        <img th:src="@{/images/exam.svg}" alt="image"/>
 
-			<p class="title">Your Score</p>
+        <p class="title">Your Score</p>
 
-			<div class="info-section">
-				<div class="info">
-					<p>Participant name:</p>
-					<p th:if="${result}" th:text="${result.username}"></p>
-				</div>
+        <div class="info-section">
+            <div class="info">
+                <p>Participant name:</p>
+                <p th:if="${result}" th:text="${result.username}"></p>
+            </div>
 
-				<div class="info">
-					<p>Total correct answer:</p>
-					<p th:if="${result}" th:text="${result.totalCorrect}"></p>
-				</div>
+            <div class="info">
+                <p>Total correct answer:</p>
+                <p th:if="${result}" th:text="${result.totalCorrect}"></p>
+            </div>
 
-				<div class="info">
-					<p>Total false answer:</p>
-					<p th:if="${result}" th:text="5 - ${result.totalCorrect}"></p>
-				</div>
-			</div>
+            <div class="info">
+                <p>Total false answer:</p>
+                <p th:if="${result}" th:text="5 - ${result.totalCorrect}"></p>
+            </div>
+        </div>
 
-			<div class="button-group">
-				<button type="button" th:onclick="|window.location.href='/scoreboard'|">View Score Board</button>
-				<button type="button" th:onclick="|window.location.href='/'|">Back to Homepage</button>
-			</div>
-		</div>
-	</div>
+        <div class="button-group">
+            <button type="button" th:onclick="|window.location.href='/scoreboard'|">View Score Board</button>
+            <button type="button" th:onclick="|window.location.href='/'|">Back to Homepage</button>
+        </div>
+    </div>
+</div>
 
-	<!-- Footer -->
-	<div th:replace="~{fragments/footer.html :: footer}"></div>
+<!-- Footer -->
+<div th:replace="~{fragments/footer.html :: footer}"></div>
 </body>
 </html>

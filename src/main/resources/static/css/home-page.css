@@ -1,81 +1,74 @@
 .main-container {
-	min-height: calc(100vh - 100px);
-	padding: 40px 20px;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-template-areas: "image-container" "form-container";
-	gap: 30px;
+    min-height: calc(100vh - 100px);
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "image-container" "form-container";
+    gap: 30px;
 }
 
 .image-container {
-	grid-area: image-container;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    grid-area: image-container;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-container img {
-	width: 100%;
-	max-width: 450px;
+    width: 100%;
+    max-width: 450px;
 }
 
 .form-container {
-	grid-area: form-container;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    grid-area: form-container;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 form {
-	width: 100%;
-	padding: 40px 20px;
-	background-color: #1f2833;
-	color: white;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #1f2833;
+    color: white;
 }
 
 label {
-  display: block;
-	font-size: 18px;
-	letter-spacing: 1px;
-	margin-bottom: 10px;
+    display: block;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
 input {
-  width: 100%;
-  display: block;
-	margin-bottom: 20px;
-	padding: 5px 10px;
-}
-
-.warning {
-  position: relative;
-	color: #fc5c7d;
-	margin-top: -10px;
-	margin-bottom: 20px;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px 10px;
 }
 
 button {
-  width: 100%;
-  padding: 7px 20px;
-  background-color: #fc5c7d;
-  color: white;
-  border: none;
+    width: 100%;
+    padding: 7px 20px;
+    background-color: #fc5c7d;
+    color: white;
+    border: none;
 }
 
 button:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
-@media screen and (min-width:850px) {
-	.main-container {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr;
-		grid-template-areas: "image-container form-container";
-	}
+@media screen and (min-width: 850px) {
+    .main-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "image-container form-container";
+    }
 }

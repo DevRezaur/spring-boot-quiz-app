@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" th:href="@{/css/global.css}">
-	<link rel="stylesheet" th:href="@{/css/navbar.css}">
-	<link rel="stylesheet" th:href="@{/css/footer.css}">
-	<link rel="stylesheet" th:href="@{/css/home-page.css}">
-	<title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/home-page.css}">
+    <title>Home Page</title>
 </head>
 <body>
-	<!-- Navbar -->
-	<div th:replace="~{fragments/navbar.html :: navbar}"></div>
+<!-- Navbar -->
+<div th:replace="~{fragments/navbar.html :: navbar}"></div>
 
-	<div class="container main-container">
-		<div class="image-container">
-			<img th:src="@{/images/exam.svg}" alt="image">
-		</div>
+<div class="container main-container">
+    <div class="image-container">
+        <img th:src="@{/images/exam.svg}" alt="image">
+    </div>
 
-		<div class="form-container">
-			<h1>Spring Boot Quiz App</h1>
+    <div class="form-container">
+        <h1>Spring Boot Quiz App</h1>
 
-			<form th:action="@{/quiz}" method="post">
-				<label for="username">Enter Your Name</label>
-				<input type="text" id="username" name="username"/>
+        <form th:action="@{/quiz}" method="post">
+            <label for="username">Enter Your Name</label>
+            <input type="text" id="username" name="username" required/>
 
-				<p class="warning" th:if="${warning}" th:text="${warning}"></p>
+            <button type="submit">Start Quiz</button>
+        </form>
+    </div>
+</div>
 
-				<button type="submit">Start Quiz</button>
-			</form>
-		</div>
-	</div>
-
-	<!-- Footer -->
-	<div th:replace="~{fragments/footer.html :: footer}"></div>
+<!-- Footer -->
+<div th:replace="~{fragments/footer.html :: footer}"></div>
 </body>
 </html>

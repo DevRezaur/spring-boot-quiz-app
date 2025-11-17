@@ -1,7 +1,7 @@
-insert into questions(ques_id, title, optionA, optionB, optionC, ans, chose)
+insert into questions(ques_id, title, optionA, optionB, optionC, correct_ans, selected_ans)
 values(
-	1, 
-	'What is a correct syntax to output "Hello World" in Java?',  
+	1,
+	'What is a correct syntax to output "Hello World" in Java?',
 	'echo "Hello World"',
 	'printf("Hello World")',
 	'System.out.println("Hello World")',
@@ -9,10 +9,10 @@ values(
 	-1)
 ;
 
-insert into questions(ques_id, title, optionA, optionB, optionC, ans, chose)
+insert into questions(ques_id, title, optionA, optionB, optionC, correct_ans, selected_ans)
 values(
-	2, 
-	'Java is short for "JavaScript."',  
+	2,
+	'Java is short for "JavaScript."',
 	'True',
 	'False',
 	'Partially True',
@@ -20,10 +20,10 @@ values(
 	-1)
 ;
 
-insert into questions(ques_id, title, optionA, optionB, optionC, ans, chose)
+insert into questions(ques_id, title, optionA, optionB, optionC, correct_ans, selected_ans)
 values(
-	3, 
-	'How do you insert COMMENTS in Java code?',  
+	3,
+	'How do you insert COMMENTS in Java code?',
 	'# This is a comment',
 	'// This is a comment',
 	'/* This is a comment',
@@ -31,10 +31,10 @@ values(
 	-1)
 ;
 
-insert into questions(ques_id, title, optionA, optionB, optionC, ans, chose)
+insert into questions(ques_id, title, optionA, optionB, optionC, correct_ans, selected_ans)
 values(
-	4, 
-	'Which data type is used to create a variable that should store text?',  
+	4,
+	'Which data type is used to create a variable that should store text?',
 	'String',
 	'Char',
 	'Both',
@@ -42,10 +42,10 @@ values(
 	-1)
 ;
 
-insert into questions(ques_id, title, optionA, optionB, optionC, ans, chose)
+insert into questions(ques_id, title, optionA, optionB, optionC, correct_ans, selected_ans)
 values(
-	5, 
-	'How do you create a variable with the numeric value 5?',  
+	5,
+	'How do you create a variable with the numeric value 5?',
 	'num x = 5',
 	'float x = 5',
 	'int x = 5',
@@ -53,10 +53,10 @@ values(
 	-1)
 ;
 
-insert into questions(ques_id, title, optionA, optionB, optionC, ans, chose)
+insert into questions(ques_id, title, optionA, optionB, optionC, correct_ans, selected_ans)
 values(
-	6, 
-	'How do you create a variable with the floating number 2.8?',  
+	6,
+	'How do you create a variable with the floating number 2.8?',
 	'num x = 2.8',
 	'float x = 2.8',
 	'int x = 2.8',
@@ -64,10 +64,10 @@ values(
 	-1)
 ;
 
-insert into questions(ques_id, title, optionA, optionB, optionC, ans, chose)
+insert into questions(ques_id, title, optionA, optionB, optionC, correct_ans, selected_ans)
 values(
-	7, 
-	'Which method can be used to find the length of a string?',  
+	7,
+	'Which method can be used to find the length of a string?',
 	'getSize()',
 	'length()',
 	'size()',
@@ -75,10 +75,10 @@ values(
 	-1)
 ;
 
-insert into questions(ques_id, title, optionA, optionB, optionC, ans, chose)
+insert into questions(ques_id, title, optionA, optionB, optionC, correct_ans, selected_ans)
 values(
-	8, 
-	'Which operator is used to add together two values?',  
+	8,
+	'Which operator is used to add together two values?',
 	'&&',
 	'.add()',
 	'+',
@@ -86,10 +86,10 @@ values(
 	-1)
 ;
 
-insert into questions(ques_id, title, optionA, optionB, optionC, ans, chose)
+insert into questions(ques_id, title, optionA, optionB, optionC, correct_ans, selected_ans)
 values(
-	9, 
-	'The value of a string variable can be surrounded by single quotes.',  
+	9,
+	'The value of a string variable can be surrounded by single quotes.',
 	'True',
 	'False',
 	'Maybe',
@@ -97,13 +97,12 @@ values(
 	-1)
 ;
 
-insert into questions(ques_id, title, optionA, optionB, optionC, ans, chose)
-values(
-	10, 
-	'Which operator can be used to compare two values?',  
-	'><',
-	'&|',
-	'==',
-	3,
-	-1)
+insert into questions(ques_id, title, optionA, optionB, optionC, correct_ans, selected_ans)
+values (10,
+        'Which operator can be used to compare two values?',
+        '><',
+        '&|',
+        '==',
+        3,
+        -1)
 ;

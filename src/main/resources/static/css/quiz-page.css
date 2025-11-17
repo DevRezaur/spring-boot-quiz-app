@@ -1,50 +1,50 @@
 .main-container {
-	padding: 40px 20px;
+    padding: 40px 20px;
 }
 
 h3 {
-	font-size: 18px;
-	letter-spacing: 0.5px;
-	text-align: center;
-	background-color: #fc5c7d;
-  color: white;
-	padding: 10px 20px;
-	margin: 0 auto;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    background-color: #fc5c7d;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 auto;
 }
 
 .question-box {
-	background-color: #1f2833;
-  color: white;
-  padding: 25px;
-  margin: 30px auto;
+    background-color: #1f2833;
+    color: white;
+    padding: 25px;
+    margin: 30px auto;
 }
 
 .title {
-  color: #fc5c7d;
-	font-size: 18px;
-	letter-spacing: 0.5px;
+    color: #fc5c7d;
+    font-size: 18px;
+    letter-spacing: 0.5px;
 }
 
 .option {
-	display: flex;
-	align-items: center;
-  margin-left: 20px;
-  margin-top: 15px;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 15px;
 }
 
 .option label {
-	margin-left: 15px;
+    margin-left: 15px;
 }
 
 button {
-  display: block;
-  background-color: #fc5c7d;
-  color: white;
-  padding: 7px 20px;
-  border: none;
-  margin: 0 auto;
+    display: block;
+    background-color: #fc5c7d;
+    color: white;
+    padding: 7px 20px;
+    border: none;
+    margin: 0 auto;
 }
 
 button:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
